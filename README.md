@@ -18,8 +18,8 @@ A RAG-based research assistant for EMS executives and analysts. It tracks CapEx,
 **[Bank Marketing Prediction & Outreach Strategy](https://github.com/hgao1023/bank-marketing-prediction)**: Machine learning team project (led a 6-person team)
 Predicted term-deposit subscriptions from 45,211 customer records. Removed post-call variables to prevent data leakage, compared logistic regression / decision tree / random forest / XGBoost with stratified cross-validation (ROC-AUC, precision, recall, F1), and ran threshold analysis comparing subscriber coverage and net return under assumed contact costs.
 
-**[RAG Meal Recommendation Assistant](https://github.com/hgao1023/rag-meal-recommender)**: Generative AI team project
-A lightweight RAG web prototype that retrieves menu data, ranks dishes, and explains each recommendation based on budget, dietary preferences, and natural-language requests.
+**[RAG Meal Recommendation Assistant](https://github.com/hgao1023/rag-meal-recommender)**: Generative AI team project, rebuilt and extended
+Turns a plain-English request like "lunch under $15, not too greasy" into five dishes that always respect the user's allergies, diet and budget. Allergy, diet and budget rules are enforced in code before semantic retrieval (ChromaDB), and the LLM only ranks and explains retrieved dishes, with its output validated against the candidate list. On 300 random user profiles, **0 of 1,500** recommendations broke a constraint (vs 66.6% without the filter); Precision@5 rose from 0.58 (retrieval alone) to **0.80** with LLM re-ranking. Web app in English and Chinese, with a rule-based fallback when no API key is set.
 
 ## Background
 
